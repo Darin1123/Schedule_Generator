@@ -25,6 +25,7 @@
       - Here is a picture of course structure![avatar](md_img/course_structure.png)
    - things that are unsure(1.3):
       - Not sure whether there are conflicts between two sections from two different sections.
+   - <font color=#999999>END OF 1</font>
 ---------
 ## Choice of data structrue(2):
    - class: ADT-Point
