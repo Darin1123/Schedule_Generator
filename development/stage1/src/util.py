@@ -1,20 +1,7 @@
-import csv
-
-def writeSchedule(schedule, fileName):
-    headers = ['Time', 'Monday', 'Tuesday', 'Wednesday', 'Thursay', 'Friday']
-    table = schedule.getTable()
-    rows = []
-    for i in range(10):
-        row = [convertTime(i)]
-        for j in range(5):
-            row.append(table[j][i])
-        rows.append(row)
-        
-    with open(fileName+".csv", 'w') as f:
-        f_csv = csv.writer(f)
-        f_csv.writerow(headers)
-        f_csv.writerows(rows)
-
+##
+# @brief convert a digit to a weekday
+# @param day int
+# @return string
 def convertDay(day):
     switcher = {
         0: "Monday",
@@ -25,6 +12,10 @@ def convertDay(day):
     }
     return switchertcher[day]
 
+##
+# @brief convert a digit to a period
+# @param time int
+# @return string
 def convertTime(time):
     switcher ={
         0: "8:30=9:20",
@@ -39,3 +30,25 @@ def convertTime(time):
         9: "17:30-18:20"
     }
     return switcher[time]
+
+##
+# Example:
+#
+#   a=[[1, 2],   b=[5,
+#      [3, 4]]      6]
+#   
+#   map(a, b)=[[1, 2, 5],
+#              [1, 2, 6],
+#              [3, 4, 5],
+#              [3, 4, 6]]
+#
+# @param a 2d array
+# @param b 1d array
+# @return 2d array
+def map(a, b):
+    res = []
+    for i in a:
+        for j in b:
+            i_ = i + [j]
+            res.append(i_)
+    return res

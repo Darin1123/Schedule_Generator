@@ -3,6 +3,8 @@ from adt.Course import *
 from adt.CourseInstance import *
 from adt.Schedule import *
 from util import *
+from mainFunc import *
+from file import *
 
 def sampleCourse():
     c = Course('4ac3')
@@ -43,7 +45,7 @@ def sampleCourse2():
     return c
 
 def sampleCourse3():
-    c = Course('4X03')
+    c = Course('4x03')
     lec = set()
     lec.add(Point(1, 4))
     lec.add(Point(2, 4))
@@ -54,52 +56,22 @@ def sampleCourse3():
     c.addTut(tut)
     return c
 
-def hasConflict(cis):
-    for i in range(len(cis)):
-        for j in range(i+1, len(cis)):
-            temp = cis[i].merge()&cis[j].merge()
-            if len(temp)!=0:
-                return True
-    return False
+# import csv
 
-##
-# @param a 2d array
-# @param b 1d array
-# @return 2d array
-def map(a, b):
-    res = []
-    for i in a:
-        for j in b:
-            i_ = i + [j]
-            res.append(i_)
-    return res
-
-##
-# @param list of Course's
-# @return list of Schedule's 
-def generateSchedules(courses):
-    #generate cis array
-    cisArray=[]
-    for c in courses:
-        cisArray.append(c.generateCourseInstances())
+# def writeSchedule(schedule, fileName):
+#     headers = ['Time', 'Monday', 'Tuesday', 'Wednesday', 'Thursay', 'Friday']
+#     table = schedule.getTable()
+#     rows = []
+#     for i in range(10):
+#         row = [convertTime(i)]
+#         for j in range(5):
+#             row.append(table[j][i])
+#         rows.append(row)
         
-    #init seed
-    seed = []
-    for ci in cisArray[0]:
-        seed.append([ci])
-        
-    #map all courses
-    for i in range(1, len(cisArray)):
-        seed = map(seed, cisArray[i])
-    
-    #generate all possible schedules
-    schedules = []
-    for i in seed:
-        if not hasConflict(i):
-            tempSch = Schedule()
-            tempSch.insertCourseInstances(i)
-            schedules.append(tempSch)
-    return schedules
+#     with open(fileName+".csv", 'w') as f:
+#         f_csv = csv.writer(f)
+#         f_csv.writerow(headers)
+#         f_csv.writerows(rows)
 
 c1 = sampleCourse()
 c2 = sampleCourse1()
@@ -111,4 +83,4 @@ if (len(schedules)==0):
 else:
     print(str(len(schedules))+" schedule(s) generated.")
 for i in range(len(schedules)):
-    writeSchedule(schedules[i], 'schedule '+str(i))
+    writeSchedule(schedules[i], 'schedule_'+str(i))
