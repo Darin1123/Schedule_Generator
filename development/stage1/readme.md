@@ -30,5 +30,5 @@
 ## Choice of data structrue(2):
    - class: ADT-Point
    - section: SET
-   - part: array of srctions
+   - part: array of sections
    - course: ADT-Course containing three parts
