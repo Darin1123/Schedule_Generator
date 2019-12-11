@@ -1,4 +1,4 @@
-# Timetable Generator for McMaster University 
+# Schedule Generator for McMaster University 
 ## Introduction:
 This is a program that helps users create timetable when they are in the stage of choosing different sections of different courses before a semester begins. Specifically, this program only works for those organizations having the same course structure as McMaster university's.
 
