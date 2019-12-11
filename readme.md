@@ -6,9 +6,6 @@ This is a program that helps users create timetable when they are in the stage o
       - big view: given courses, return all possible timetables  
    - choice of language: 
       - **Python3**
-   - reason for choosing **Python3**: 
-      1. easy to read/write a file
-      2. some great libraries available ( Pandas, numpy, ... )
 
 ## Problem Analysis (1)
    - Timetable analysis(1.1):
