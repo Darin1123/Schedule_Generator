@@ -19,9 +19,6 @@ This is a program that helps users create timetable when they are in the stage o
       - Therefore, the timetable can be viewed as an x-y coordinnate.
       - ![avatar](md_img/coordinate_table.png)
       - Note: n-m means from n:30 to m:20
-      - For the class in the evening, it can be represented as 
-         - Monday[19:20-20:30, 20:30-21:20, 12:30-22:20, -1]
-         - Note there is a "-1" at the end of the array. It is a flag which indicates all items in the array should be move backwards for 30 minutes.
    - Structure of a course in McMaster Univeristy(1.2):
       - Three parts:
          - Lecture
