@@ -3,6 +3,7 @@ from adt.Course import Course
 from mainFunc import generateSchedules
 from file import writeSchedule
 from util import day2num
+import os
 
 def getNumCourses():
     numCourse = input('> Enter number of courses: ')
@@ -90,7 +91,7 @@ def main():
     termName = input('> Enter term name: ')
     print(termName)
     print()
-    f = open(termName+'.term', 'w')
+    f = open(os.getcwd()+'/'+termName+'.txt', 'w')
     f.write(termName+'\n')
     num = getNumCourses()
     print(num)
@@ -125,13 +126,17 @@ def main():
             tempLabSec = createSection(courseName, l+1, 'lab', f)
             tempCourse.addLab(tempLabSec)
         courses.append(tempCourse)
+        f.write("END\n")
     schedules = generateSchedules(courses)
     if (len(schedules)==0):
         print("There exists conflict.")
     else:
-        for i in range(len(schedules)):
-            writeSchedule(schedules[i], './schedule_'+str(i))
-    print(str(len(schedules))+" schedule(s) generated.")
+    	check = input("[!] Warning: existing schedules may be overwritten, enter 'yes' to continue, other to stop.\n> ")
+    	print()
+    	if check=='yes':
+            for i in range(len(schedules)):
+                writeSchedule(schedules[i], './schedule_'+str(i))
+            print(str(len(schedules))+" schedule(s) generated.")
     f.close()
 
 
