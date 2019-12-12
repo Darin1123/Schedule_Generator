@@ -6,7 +6,7 @@ class Schedule:
     def init(self):
         for i in range(5):
             self.__table.append([])
-            for j in range(10):
+            for j in range(11):
                 self.__table[i].append(None)
                 
     def getTable(self):
