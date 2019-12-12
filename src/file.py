@@ -1,6 +1,7 @@
 import csv
 from util import convertDay, convertTime
-import os 
+import sys
+import os
 
 
 
@@ -14,9 +15,13 @@ def writeSchedule(schedule, fileName):
             row.append(table[j][i])
         rows.append(row)
         
-    path = os.getcwd()
-    os.mkdir(path+'/schedules')
-    with open(path+'/schedules/'+fileName+".csv", 'w') as f:
+    pwd = sys.argv[0]
+    paths = pwd.split('/')
+    rebuildPath = '/'
+    for i in range(len(paths)-1):
+        rebuildPath+=paths[i]+'/'
+    os.mkdir(rebuildPath+'schedules')
+    with open(rebuildPath+'schedules/'+fileName+".csv", 'w') as f:
         f_csv = csv.writer(f)
         f_csv.writerow(headers)
         f_csv.writerows(rows)

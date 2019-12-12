@@ -3,7 +3,7 @@ from adt.Course import Course
 from mainFunc import generateSchedules
 from file import writeSchedule
 from util import day2num
-import os
+import sys
 
 def getNumCourses():
     numCourse = input('> Enter number of courses: ')
@@ -91,7 +91,12 @@ def main():
     termName = input('> Enter term name: ')
     print(termName)
     print()
-    f = open(os.getcwd()+'/'+termName+'.txt', 'w')
+    pwd = sys.argv[0]
+    paths = pwd.split('/')
+    rebuildPath = '/'
+    for i in range(len(paths)-1):
+        rebuildPath+=paths[i]+'/'
+    f = open(rebuildPath+'/'+termName+'.txt', 'w')
     f.write(termName+'\n')
     num = getNumCourses()
     print(num)
@@ -143,3 +148,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    #print(sys.argv[0])

@@ -37,6 +37,7 @@ This is a program that helps users create timetable when they are in the stage o
    - course: ADT-Course containing three parts
 ---------
 ## Usage
+#### Method 1:
    - use **Python3** to run main.py.
    - in your terminal, execute the following commands:
    ```bash
@@ -45,6 +46,9 @@ This is a program that helps users create timetable when they are in the stage o
    > python3 main.py
    ```
    - follow the instructions to create your schedules.
-   - output:
-      - a **.term** file containing the user input
-      - some **.csv** files and they are all possible schedules
+#### Method 2:
+   - download the file **_Schedule_Generator_** and executes.
+   - follow the instructions to create your schedules.
+## Output
+   - a **.term** file containing the user input
+   - a folder named **Schedules** with some **.csv** files which are all possible schedules
