@@ -50,7 +50,7 @@ This is a program that helps users create timetable when they are in the stage o
    - download the file **_Schedule_Generator_** and execute the file.
    - follow the instructions to create your schedules.
 #### Method 3 (Windows):
-   - download the file **_Schedule_Generator_** and execute the file.
+   - download the file **_Schedule_Generator.exe_** and execute the file.
    - follow the instructions to create your schedules.
 ## Output
    - a **.term** file containing the user input
