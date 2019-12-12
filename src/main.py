@@ -63,6 +63,10 @@ def createSection(courseName, index, category, f):
             times = time.split('-')
             start = int(times[0])
             to = int(times[1])
+            if (to<start):
+                print('[!] There exist errors in the input')
+                print()
+                return createSection(courseName, index, category, f)
             print('from: %d'%(start))
             print('to: %d'%(to))
             print()
@@ -93,10 +97,10 @@ def main():
     print()
     pwd = sys.argv[0]
     paths = pwd.split('/')
-    rebuildPath = '/'
+    rebuildPath = ''
     for i in range(len(paths)-1):
         rebuildPath+=paths[i]+'/'
-    f = open(rebuildPath+'/'+termName+'.txt', 'w')
+    f = open(rebuildPath+termName+'.txt', 'w')
     f.write(termName+'\n')
     num = getNumCourses()
     print(num)
