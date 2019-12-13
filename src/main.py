@@ -21,7 +21,7 @@ def getNumCourses():
         return getNumCourses()
 
 def getNumSecs(courseName, sectype):
-    numLec = input('> %s: Enter number of %s sections: '%(courseName, sectype))
+    numLec = input('%s > Enter number of %s sections: '%(courseName, sectype))
     try:
         num = int(numLec)
         if num<0:

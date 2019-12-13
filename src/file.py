@@ -1,7 +1,6 @@
 import csv
 from util import convertDay, convertTime
 import sys
-import os
 
 
 def writeSchedule(schedule, fileName):
