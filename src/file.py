@@ -19,8 +19,7 @@ def writeSchedule(schedule, fileName):
     rebuildPath = ''
     for i in range(len(paths)-1):
         rebuildPath+=paths[i]+'/'
-    os.mkdir(rebuildPath+'schedules')
-    with open(rebuildPath+'schedules/'+fileName+".csv", 'w') as f:
+    with open(rebuildPath+fileName+".csv", 'w') as f:
         f_csv = csv.writer(f)
         f_csv.writerow(headers)
         f_csv.writerows(rows)
