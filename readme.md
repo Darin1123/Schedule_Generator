@@ -11,8 +11,7 @@ This is a program that helps users create timetable when they are in the stage o
    - Timetable analysis:
       - Analyze by looking at a real example:
       - ![avatar](md_img/schedule_example.png)
-      - Define **class**: class is one inctance in any part of the course. 
-      In another word, for a lab, a tutorial, or lecture, they can all be  classes.
+      - Define **class**: class is one instance from any part of the course, i.e. a **class** can be a lecture, a tutorial, or a lab.
       - **Assumption**: there are no classes on weekends.
       - A class usually lasts for 50 minutes and starts from 30 minutes after a certain clock.
       - Note: Some classes in the evening may not apply the pattern.
